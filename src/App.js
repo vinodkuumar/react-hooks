@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Post from './post';
 
 function App({ initialCount }) {
-  const [state, setState] = useState({
-    count: initialCount,
-    user: 'vinod'
-  });
+  const [count, setCount] = useState(initialCount)
 
   const [posts, setPosts] = useState([
     {
@@ -13,16 +10,21 @@ function App({ initialCount }) {
       body: 'Everything is awesome when u are part of a team'
     }
   ])
-  // const addOne = () => {
-  //   setState(prevCount => {
-  //     return prevCount + 1
-  //   })
-  // }
-  // const restOne = () => {
-  //   setState(prevCount => {
-  //     return prevCount - 1
-  //   })
-  // }
+  const addOne = () => {
+    setCount(prevCount => {
+      return prevCount + 1
+    })
+  }
+  const restOne = () => {
+    setCount(prevCount => {
+      return prevCount - 1
+    })
+  }
+  const resetCount = () => {
+    setCount(prevCount => {
+      return initialCount
+    })
+  }
 
   const addOnePost = () => {
     let newPost = {
@@ -43,11 +45,11 @@ function App({ initialCount }) {
   return (
     <>
       <div>
-        <h1>{state.user}</h1>
-        <h3>Count: {state.count}</h3>
-        <button onClick={() => setState({ count: state.count + 1 })}>Add one +</button>
-        <button onClick={() => setState({ count: state.count - 1 })}>Rest one -</button>
-        <button onClick={() => setState({ count: initialCount })}>Reset</button>
+        
+        <h3>Count: {count}</h3>
+        <button onClick={addOne}>Add one +</button>
+        <button onClick={restOne}>Rest one -</button>
+        <button onClick={resetCount}>Reset</button>
       </div>
       <br />
       {posts.map((item, i) => (
