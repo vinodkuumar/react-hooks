@@ -1,8 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import randomColor from 'randomcolor';
 import Post from './post';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
+  const [color, setColor] = useState("")
+  //componentdid mount
+  useEffect(() => {
+   const intervalId = setInterval(() => {
+      setCount(prevCount => prevCount + 1)
+    }, 1000)
+    //component will unmount
+    return (() => clearInterval(intervalId))
+  }, [])
+  // componentdidupdate
+  useEffect(() => {
+    setColor(randomColor())
+
+  }, [count])
 
   const [posts, setPosts] = useState([
     {
@@ -10,11 +25,11 @@ function App({ initialCount }) {
       body: 'Everything is awesome when u are part of a team'
     }
   ])
-  const addOne = () => {
-    setCount(prevCount => {
-      return prevCount + 1
-    })
-  }
+  // const addOne = () => {
+  //   setCount(prevCount => {
+  //     return prevCount + 1
+  //   })
+  // }
   const restOne = () => {
     setCount(prevCount => {
       return prevCount - 1
@@ -45,15 +60,14 @@ function App({ initialCount }) {
   return (
     <>
       <div>
-        
-        <h3>Count: {count}</h3>
-        <button onClick={addOne}>Add one +</button>
+        <h1 style={{ color: color }}>Count: {count}</h1>
+        {/* <button onClick={addOne}>Add one +</button> */}
         <button onClick={restOne}>Rest one -</button>
         <button onClick={resetCount}>Reset</button>
       </div>
       <br />
       {posts.map((item, i) => (
-        <Post item={item} key={i}/>
+        <Post item={item} key={i} />
       ))}
       <br />
       <button onClick={addOnePost}>Add Post</button>
