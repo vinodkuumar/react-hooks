@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import randomColor from 'randomcolor';
 import Post from './post';
+import UseMemoExample from './UseMemoExample';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
@@ -9,9 +10,9 @@ function App({ initialCount }) {
   useEffect(() => {
    const intervalId = setInterval(() => {
       setCount(prevCount => prevCount + 1)
-    }, 1000)
+    }, 2000)
     //component will unmount
-    return (() => clearInterval(intervalId))
+     return (() => clearInterval(intervalId))
   }, [])
   // componentdidupdate
   useEffect(() => {
@@ -72,6 +73,9 @@ function App({ initialCount }) {
       <br />
       <button onClick={addOnePost}>Add Post</button>
       <button onClick={removePost}>Remove Posts</button>
+      <div>
+      <UseMemoExample />
+      </div>
     </>
   );
 }
