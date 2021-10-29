@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import randomColor from 'randomcolor';
 import Post from './post';
 import UseMemoExample from './UseMemoExample';
+import UsecallbackExample from './UsecallbackExample';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
@@ -75,6 +76,9 @@ function App({ initialCount }) {
       <button onClick={removePost}>Remove Posts</button>
       <div>
       <UseMemoExample />
+      </div>
+      <div>
+        <UsecallbackExample />
       </div>
     </>
   );
