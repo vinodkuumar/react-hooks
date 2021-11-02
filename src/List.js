@@ -7,7 +7,7 @@ const List = ({getItems}) => {
         console.log('items updated')
     },[getItems])
     return(
-        items.map((item) => <div>{item}</div>)
+        items.map((item) => <div key={item}>{item}</div>)
     )
 }
 

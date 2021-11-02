@@ -3,17 +3,18 @@ import randomColor from 'randomcolor';
 import Post from './post';
 import UseMemoExample from './UseMemoExample';
 import UsecallbackExample from './UsecallbackExample';
+import UseReducerExample from './UseReducerExample';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
   const [color, setColor] = useState("")
   //componentdid mount
   useEffect(() => {
-   const intervalId = setInterval(() => {
-      setCount(prevCount => prevCount + 1)
-    }, 2000)
-    //component will unmount
-     return (() => clearInterval(intervalId))
+  //  const intervalId = setInterval(() => {
+  //     setCount(prevCount => prevCount + 1)
+  //   }, 2000)
+  //   //component will unmount
+  //    return (() => clearInterval(intervalId))
   }, [])
   // componentdidupdate
   useEffect(() => {
@@ -79,6 +80,9 @@ function App({ initialCount }) {
       </div>
       <div>
         <UsecallbackExample />
+      </div>
+      <div>
+        <UseReducerExample />
       </div>
     </>
   );
