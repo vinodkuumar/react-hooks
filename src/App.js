@@ -4,6 +4,7 @@ import Post from './post';
 import UseMemoExample from './UseMemoExample';
 import UsecallbackExample from './UsecallbackExample';
 import UseReducerExample from './UseReducerExample';
+import UseRefExample from './UseRefExample';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
@@ -83,6 +84,9 @@ function App({ initialCount }) {
       </div>
       <div>
         <UseReducerExample />
+      </div>
+      <div>
+        <UseRefExample />
       </div>
     </>
   );
