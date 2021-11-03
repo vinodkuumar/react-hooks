@@ -5,6 +5,7 @@ import UseMemoExample from './UseMemoExample';
 import UsecallbackExample from './UsecallbackExample';
 import UseReducerExample from './UseReducerExample';
 import UseRefExample from './UseRefExample';
+import UseContextExample from './UseContextExample';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
@@ -87,6 +88,9 @@ function App({ initialCount }) {
       </div>
       <div>
         <UseRefExample />
+      </div>
+      <div>
+        <UseContextExample />
       </div>
     </>
   );
