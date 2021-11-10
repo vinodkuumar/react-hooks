@@ -7,6 +7,7 @@ import UseReducerExample from './UseReducerExample';
 import UseRefExample from './UseRefExample';
 import UseContextExample from './UseContextExample';
 import CustomHookExample from './CustomHookExample';
+import UseLayoutEffectExample from './UseLayoutEffectExample';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
@@ -95,6 +96,9 @@ function App({ initialCount }) {
       </div>
       <div>
         <CustomHookExample />
+      </div>
+      <div>
+        <UseLayoutEffectExample />
       </div>
     </>
   );
