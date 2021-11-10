@@ -8,6 +8,7 @@ import UseRefExample from './UseRefExample';
 import UseContextExample from './UseContextExample';
 import CustomHookExample from './CustomHookExample';
 import UseLayoutEffectExample from './UseLayoutEffectExample';
+import UseDebugValueExample from './UseDebugValueExample';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
@@ -99,6 +100,9 @@ function App({ initialCount }) {
       </div>
       <div>
         <UseLayoutEffectExample />
+      </div>
+      <div>
+        <UseDebugValueExample />
       </div>
     </>
   );
