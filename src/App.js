@@ -9,6 +9,7 @@ import UseContextExample from './UseContextExample';
 import CustomHookExample from './CustomHookExample';
 import UseLayoutEffectExample from './UseLayoutEffectExample';
 import UseDebugValueExample from './UseDebugValueExample';
+import UseImperativeHandleExample from './UseImperativeHandleExample';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
@@ -103,6 +104,9 @@ function App({ initialCount }) {
       </div>
       <div>
         <UseDebugValueExample />
+      </div>
+      <div>
+        <UseImperativeHandleExample />
       </div>
     </>
   );
