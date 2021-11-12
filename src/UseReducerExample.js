@@ -110,7 +110,8 @@ const UseReducerExample = () => {
                 </form>
             {todos.map((todo) => {
                 return (
-                    <Todo 
+                    <Todo
+                        key={Math.random() * 100} 
                         todo={todo}
                         dispatch={dispatch}/>
                 )
