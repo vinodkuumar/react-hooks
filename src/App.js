@@ -13,6 +13,7 @@ import UseImperativeHandleExample from './UseImperativeHandleExample';
 import {useFocus} from './customhooks/useFocus';
 import DocTitleOne from './components/DocTitleOne';
 import Counter from './components/Counter';
+import Form from './components/Form';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
@@ -129,6 +130,9 @@ function App({ initialCount }) {
       </div>
       <div>
         <Counter />
+      </div>
+      <div>
+          <Form />
       </div>
     </>
   );
