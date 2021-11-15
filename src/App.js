@@ -11,6 +11,7 @@ import UseLayoutEffectExample from './UseLayoutEffectExample';
 import UseDebugValueExample from './UseDebugValueExample';
 import UseImperativeHandleExample from './UseImperativeHandleExample';
 import {useFocus} from './customhooks/useFocus';
+import DocTitleOne from './components/DocTitleOne';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
@@ -112,6 +113,7 @@ function App({ initialCount }) {
         <UseImperativeHandleExample />
       </div>
       <div>
+        <h2>useFocus</h2>
         <input 
           type="text"
           ref={ref}
@@ -119,6 +121,9 @@ function App({ initialCount }) {
           {focused && (
             <span>focused is true</span>
           )}
+      </div>
+      <div>
+        <DocTitleOne />
       </div>
     </>
   );
