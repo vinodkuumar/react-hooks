@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import randomColor from 'randomcolor';
 import Post from './post';
 import UseMemoExample from './UseMemoExample';
@@ -10,6 +10,7 @@ import CustomHookExample from './CustomHookExample';
 import UseLayoutEffectExample from './UseLayoutEffectExample';
 import UseDebugValueExample from './UseDebugValueExample';
 import UseImperativeHandleExample from './UseImperativeHandleExample';
+import {useFocus} from './customhooks/useFocus';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
@@ -66,6 +67,8 @@ function App({ initialCount }) {
   const removePost = () => {
     setPosts([])
   }
+  const ref = useRef();
+  const focused = useFocus(ref);
   return (
     <>
       <div>
@@ -107,6 +110,15 @@ function App({ initialCount }) {
       </div>
       <div>
         <UseImperativeHandleExample />
+      </div>
+      <div>
+        <input 
+          type="text"
+          ref={ref}
+          placeholder="focus on me"/>
+          {focused && (
+            <span>focused is true</span>
+          )}
       </div>
     </>
   );
