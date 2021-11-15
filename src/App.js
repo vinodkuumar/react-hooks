@@ -12,6 +12,7 @@ import UseDebugValueExample from './UseDebugValueExample';
 import UseImperativeHandleExample from './UseImperativeHandleExample';
 import {useFocus} from './customhooks/useFocus';
 import DocTitleOne from './components/DocTitleOne';
+import Counter from './components/Counter';
 
 function App({ initialCount }) {
   const [count, setCount] = useState(initialCount)
@@ -123,7 +124,11 @@ function App({ initialCount }) {
           )}
       </div>
       <div>
+        <h2>useDocumentTitle</h2>
         <DocTitleOne />
+      </div>
+      <div>
+        <Counter />
       </div>
     </>
   );
